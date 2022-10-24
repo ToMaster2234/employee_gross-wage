@@ -1,0 +1,22 @@
+import random
+from statistics import mean 
+
+employees = []
+number_of_e = int(input("How many employees? "))
+
+#allocation of wages to employees
+for x in range(0, number_of_e):
+    employees.append(random.randint(1000, 10000)) 
+
+average = mean(employees) 
+print("Employees before: ", *employees)
+
+f = 0
+for salary in employees:
+    if salary < average:
+        employees[0 + f] += 50
+    elif salary == average:
+        employees[0 + f] += 20    
+    f += 1
+        
+print("Employees now:", *employees)
